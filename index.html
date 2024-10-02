@@ -7,13 +7,15 @@
     </head>
     <body ng-controller="myFirstController">
         <div>
-            <h2>hello there my name is {{name}} !!!!</h2>
+            <h2>hello there my name is {{name()}} !!!!</h2><br>
+            <h2>my brother name is {{change()}}</h2>
             <h3>to find my age click the button ....</h3><button ng-click="ageFinder()">Age Finder</button>{{ageResult}}<br><br>
              <input type="text" placeholder="type here please ...." ng-model="input"> <button ng-click="upperCase()">Upeercase</button> <br>
              <h2>{{input}}</h2><br><br>
              <input type="text" placeholder="type here please ...." ng-model="input1"> <button ng-click="lowerCase()">Lowercase</button> <br>
              <h2>{{input1}}<br>
-             <h3>The total cost of trip is : {{cost | currency:"£":"3"}}</h3>
+             <h3>The total cost of trip is : {{cost | currency:"£":"3"}}</h3><br>
+             {{try()}}
         </div>
     </body>
     <footer></footer>

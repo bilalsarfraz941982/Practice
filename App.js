@@ -1,8 +1,10 @@
 (
     function(){
+       "use strict";
+
         angular.module("myFirstApp", [])
         .controller("myFirstController" , MainFucntion)
-        .filter("cName","ChangeName");
+        .filter("cName",ChangeName);
 
         MainFucntion.$inject=["$scope", "$filter","$injector","CnameFilter"];
 
@@ -18,9 +20,13 @@
                 return aa;
             };
 
+            $scope.try = function(){
+                return  $scope.age
+            }
+
             $scope.change = function(){
                 var aa = "Bilal Sarfraz";
-                aa = ChangeName(aa);
+                aa = CnameFilter(aa);
                 return aa ;
             }
 
