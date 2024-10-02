@@ -10,7 +10,7 @@
             $scope.age= "my age is 42 years old ;("
 
             $scope.ageFinder = function(){
-                return $scope.age
+                 $scope.age
             }
         }
     }
