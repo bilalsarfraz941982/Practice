@@ -1,17 +1,28 @@
 (
     function(){
         angular.module("myFirstApp", [])
-        .controller("myFirstController" , MainFucntion);
+        .controller("myFirstController" , MainFucntion)
+        .filter("cName","ChangeName");
 
-        MainFucntion.$inject=["$scope", "$filter","$injector"];
+        MainFucntion.$inject=["$scope", "$filter","$injector","CnameFilter"];
 
-        function MainFucntion($scope,$filter,$injector){
-            $scope.name = "Bilal Sarfraz";
+        function MainFucntion($scope,$filter,$injector,CnameFilter){
             $scope.age= "my age is 42 years old ;(";
             $scope.input="";
             $scope.input1="";
             $scope.ageResult ="";
             $scope.cost  = 45 ;
+
+            $scope.name  = function(){
+                var aa = "Bilal Sarfraz"
+                return aa;
+            };
+
+            $scope.change = function(){
+                var aa = "Bilal Sarfraz";
+                aa = ChangeName(aa);
+                return aa ;
+            }
 
             $scope.ageFinder = function(){
                  $scope.ageResult = $scope.age
@@ -33,6 +44,13 @@
         function information(name,age,location){
             return "lolly pop"};
 
-            console.log(information.toString());
+            console.log(information.toString());;
+
+        function ChangeName(){
+            return function(input){
+                input = input.replace("Bilal", "Adeel")
+                return input
+            }
+        }
         })
     ();
