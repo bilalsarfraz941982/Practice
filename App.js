@@ -3,14 +3,15 @@
         angular.module("myFirstApp", [])
         .controller("myFirstController" , MainFucntion);
 
-        MainFucntion.$inject=["$scope", "$filter"];
+        MainFucntion.$inject=["$scope", "$filter","$injector"];
 
-        function MainFucntion($scope,$filter){
+        function MainFucntion($scope,$filter,$injector){
             $scope.name = "Bilal Sarfraz";
             $scope.age= "my age is 42 years old ;(";
             $scope.input="";
             $scope.input1="";
-            $scope.ageResult =""
+            $scope.ageResult ="";
+            $scope.cost  = 45 ;
 
             $scope.ageFinder = function(){
                  $scope.ageResult = $scope.age
@@ -25,7 +26,13 @@
             $scope.lowerCase = function(){
                 var aa = $filter("lowercase")($scope.input1);
                 $scope.input1 = aa ;
-            }
+            };
+
+            console.log($injector.annotate(MainFucntion))
         }
-    }
-)();
+        function information(name,age,location){
+            return "lolly pop"};
+
+            console.log(information.toString());
+        })
+    ();
