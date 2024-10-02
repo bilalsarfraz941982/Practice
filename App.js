@@ -7,9 +7,10 @@
 
         function MainFucntion($scope,$filter){
             $scope.name = "Bilal Sarfraz";
+            $scope.age= "my age is 42 years old ;("
 
             $scope.ageFinder = function(){
-                return "my age is 42 years old :("
+                return $scope.age
             }
         }
     }
